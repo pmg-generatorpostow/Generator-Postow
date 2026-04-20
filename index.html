@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stwórz swój post! - PMSession XIV</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#10062d",
+                        "on-surface-variant": "#5f557f",
+                        "tertiary": "#d81b60",
+                        "on-tertiary-container": "#4d0021",
+                        "secondary-dim": "#6200ea",
+                        "surface-container": "#f3efff",
+                        "surface": "#fcfaff",
+                        "tertiary-fixed-dim": "#ff4081",
+                        "on-primary-container": "#001d6d",
+                        "on-surface": "#31294f",
+                        "on-primary": "#f4f1ff",
+                        "on-secondary-fixed": "#21005d",
+                        "on-secondary-fixed-variant": "#4f378b",
+                        "on-primary-fixed-variant": "#190099",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "surface-bright": "#faf4ff",
+                        "outline": "#7b719c",
+                        "tertiary-fixed": "#ffd8e4",
+                        "on-tertiary-fixed-variant": "#880e4f",
+                        "on-error-container": "#510017",
+                        "surface-container-highest": "#e2d7ff",
+                        "on-error": "#ffefef",
+                        "surface-variant": "#e2d7ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#eaddff",
+                        "secondary": "#6200ea",
+                        "tertiary-dim": "#ff4081",
+                        "on-background": "#31294f",
+                        "inverse-primary": "#8582ff",
+                        "background": "#faf4ff",
+                        "on-secondary-container": "#21005d",
+                        "inverse-on-surface": "#a296c5",
+                        "secondary-container": "#eaddff",
+                        "primary-fixed": "#9795ff",
+                        "surface-tint": "#2962ff",
+                        "tertiary-container": "#ffd8e4",
+                        "primary-container": "#dbe1ff",
+                        "surface-container-high": "#e7deff",
+                        "primary-dim": "#1a237e",
+                        "surface-container-low": "#f5eeff",
+                        "error": "#b41340",
+                        "error-dim": "#a70138",
+                        "on-primary-fixed": "#000000",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#2962ff",
+                        "outline-variant": "#b2a6d6",
+                        "surface-dim": "#dacdff",
+                        "primary-fixed-dim": "#8885ff",
+                        "on-tertiary-fixed": "#311b92",
+                        "error-container": "#f74b6d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+        }
+
+        .gradient-brand {
+            background: linear-gradient(135deg, #2962ff 0%, #6200ea 50%, #d81b60 100%);
+        }
+
+        /* Dodatkowe zabezpieczenie, by płótno nie było większe niż ekran */
+        canvas {
+            max-width: 100%;
+            height: auto !important;
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+
+    <header
+        class="bg-surface-container-low/95 backdrop-blur-md docked full-width top-0 z-50 border-b border-outline-variant/10">
+        <div
+            class="flex flex-row justify-between items-center w-full px-4 md:px-8 py-4 max-w-[1440px] mx-auto gap-4 md:gap-0">
+            <div
+                class="font-['Prompt'] text-sm sm:text-base md:text-2xl font-black text-primary uppercase tracking-[0.1em] text-left leading-tight max-w-[60%]">
+                Project Management Group</div>
+            <div class="flex items-center gap-4">
+                <img alt="Logo" class="w-auto object-contain h-10 sm:h-12 md:h-24" src="logo.png" />
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-10">
+        <div class="mb-8 md:mb-12 text-center lg:text-left">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tighter mb-3">Generator
+                Postów</h1>
+            <p class="text-on-surface-variant/70 max-w-2xl text-base md:text-lg mx-auto lg:mx-0">Wykonaj poniższe
+                czynności, aby dostosować swój post na social media!</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7 flex flex-col gap-6 lg:sticky lg:top-24 relative">
+                <div class="bg-surface-container-high p-5 md:p-6 lg:p-8 rounded-lg relative overflow-hidden group">
+                    <div class="absolute top-6 left-6 z-10">
+                        <span
+                            class="bg-primary-container text-primary text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="visibility"
+                                data-weight="fill">visibility</span>
+                            PODGLĄD NA ŻYWO
+                        </span>
+                    </div>
+
+                    <div
+                        class="bg-surface-container-lowest shadow-2xl rounded-lg overflow-hidden relative border border-outline-variant/10 flex items-center justify-center">
+                        <canvas id="mojePlotno" style="max-width:100%; height:auto;"></canvas>
+                    </div>
+
+                    <div class="mt-6 flex justify-center">
+                        <button id="przyciskReset"
+                            class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-semibold text-sm">
+                            <span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+                            WYCZYŚĆ
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-surface-container-lowest p-5 md:p-6 rounded-lg shadow-sm border border-outline-variant/10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+                        <h2 class="text-xl font-bold tracking-tight uppercase">Informacje</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Narzędzie jest darmowym, w pełni
+                                bezpiecznym projektem studenckim, przeznaczonym wyłącznie do osobistego użytku
+                                społecznościowego (niekomercyjnego).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <section
+                    class="bg-surface-container-lowest p-5 md:p-6 rounded-lg shadow-sm border border-outline-variant/10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span
+                            class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm">1</span>
+                        <h2 class="text-xl font-bold tracking-tight uppercase">DODAJ SWOJE ZDJĘCIE</h2>
+                    </div>
+                    <div
+                        class="group relative flex flex-col items-center justify-center border-4 border-dashed border-outline-variant/20 rounded-xl p-8 hover:border-primary/50 transition-all cursor-pointer bg-surface">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-primary text-3xl"
+                                data-icon="add_a_photo">add_a_photo</span>
+                        </div>
+                        <p class="font-bold text-on-surface">Prześlij zdjęcie</p>
+                        <input id="wgrajZdjecie" class="absolute inset-0 opacity-0 cursor-pointer" type="file"
+                            accept="image/*" />
+                    </div>
+
+                    <div id="imageControls" class="mt-6 hidden flex-col gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Zoom</label>
+                            <input id="zoomZdjecie" type="range" min="0.1" max="3" step="0.01" value="1"
+                                class="w-full accent-primary">
+                        </div>
+                        <div
+                            class="text-xs text-on-surface-variant bg-surface-variant/30 p-3 rounded-md flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]">touch_app</span>
+                            <span>Możesz przesunąć zdjęcie łapiąc za nie na podglądzie obok</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="bg-surface-container-lowest p-5 md:p-6 rounded-lg shadow-sm border border-outline-variant/10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span
+                            class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-sm">2</span>
+                        <h2 class="text-xl font-bold tracking-tight uppercase">UZUPEŁNIJ SWOJE DANE</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Imię
+                                i nazwisko</label>
+                            <input id="tekstImie"
+                                class="w-full px-5 py-3 rounded-md bg-surface border-none ring-2 ring-outline-variant/20 focus:ring-primary/50 transition-all text-on-surface font-medium"
+                                placeholder="np. Jan Kowalski" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Rola</label>
+                            <input id="tekstStanowisko"
+                                class="w-full px-5 py-3 rounded-md bg-surface border-none ring-2 ring-outline-variant/20 focus:ring-primary/50 transition-all text-on-surface font-medium"
+                                placeholder="np. Student / Prelegent / Uczestnik" type="text" />
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="bg-surface-container-lowest p-5 md:p-6 rounded-lg shadow-sm border border-outline-variant/10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span
+                            class="w-8 h-8 rounded-full bg-tertiary text-white flex items-center justify-center font-bold text-sm">3</span>
+                        <h2 class="text-xl font-bold tracking-tight uppercase">POBIERZ GRAFIKĘ</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <div
+                            class="bg-surface-variant/20 p-4 rounded-lg border border-outline-variant/20 flex items-start gap-3">
+                            <input id="zgodaWarunki" type="checkbox"
+                                class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface cursor-pointer">
+                            <label for="zgodaWarunki"
+                                class="text-xs text-on-surface-variant leading-relaxed cursor-pointer select-none">
+                                Wyrażam zgodę na warunki korzystania z serwisu. Potwierdzam, że korzystam z własnych,
+                                legalnych danych. Rozumiem, że obraz jest generowany lokalnie w mojej przeglądarce i
+                                żadne dane nie są przesyłane na żaden serwer.
+                            </label>
+                        </div>
+                        <button id="przyciskPobierz" disabled
+                            class="w-full py-4 rounded-full gradient-brand text-white font-extrabold text-base flex items-center justify-center gap-3 shadow-xl shadow-primary/30 hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:brightness-100 disabled:active:scale-100 disabled:shadow-none">
+                            <span class="material-symbols-outlined" data-icon="download"></span>
+                            POBIERZ PNG
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-surface-container-low w-full py-12 mt-12 border-t border-outline-variant/10">
+        <div class="max-w-7xl mx-auto px-8 text-center md:text-left">
+            <div class="text-[#31294f]/60 font-plus-jakarta-sans text-sm font-semibold">
+                © 2026 Koło Naukowe Project Management Group, Politechnika Wrocławska. Wyłącznie do użytku
+                niekomercyjnego.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
